@@ -9,9 +9,9 @@ class adminController {
 
     static async cadastrarProduto(req, res) {
         try {
-            const { nome, valor } = req.body
+            const { nome, valor, imagem } = req.body
 
-            const novoProduto = await ProdutoModels.create({ nome, valor })
+            const novoProduto = await ProdutoModels.create({ nome, valor, imagem })
 
             res.json({ message: "produto cadastrado com sucesso", dados: novoProduto })
         } catch (err) {
