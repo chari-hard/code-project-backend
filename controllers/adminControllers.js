@@ -27,10 +27,10 @@ class adminController {
             const produtoSelecionado = await ProdutoModels.findByPk(id)
             const produtoAlterado = await produtoSelecionado.update(novoProduto)
 
-            res.json({ message: "Música alterada com sucesso", dados: produtoAlterado })
+            res.json({ message: "Produto alterado com sucesso", dados: produtoAlterado })
 
         } catch (err) {
-            res.json({ message: "Não foi possível alterar a música" })
+            res.json({ message: "Não foi possível alterar o produto" })
         }
     }
 
@@ -40,10 +40,10 @@ class adminController {
             const id = req.params.id
             const produtoSelecionado = await ProdutoModels.findByPk(id)
             await produtoSelecionado.destroy()
-            res.json({message: "Música deletada com sucesso"})
+            res.json({message: "Produto deletado com sucesso"})
             
         }catch(err){
-            res.json({message: "Não foi possivel deletar a música"})
+            res.json({message: "Não foi possivel deletar o produto"})
 
         }
     }
